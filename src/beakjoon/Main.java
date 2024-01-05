@@ -7,15 +7,29 @@ import java.util.Arrays;
 
 public class Main {
 
-	public static int max(int a, int b) {
-		return a > b ? a : b;
-	}
-	
 	public static void main(String[] args) throws IOException {
+		
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		
 		String[] st = new String[9];
 		int stSize = st.length;
-		int[] sevenDwarf = new int[7];
+		int[] nineDwarf = new int[9];
+		
+		int index= 0;
+		
+		for(int i=0; i<stSize;i++) {
+			st[i] = bf.readLine();
+		}
+		
+		for(String i : st) {
+			nineDwarf[index] = Integer.parseInt(i);
+			index++;
+		}
+		
+		SevenDwarf dwarfs = new SevenDwarf(nineDwarf);
+		
+		dwarfs.sort();
+		dwarfs.pickSeven();
 		
 		
 	}
