@@ -20,7 +20,7 @@ public class Main {
 		
 		String st1 = bf.readLine();
 		String st2 = bf.readLine();
-		String[] temp = st2.split("\s");
+		String[] temp = st2.split(" ");
 		
 		int call = Integer.parseInt(st1);
 		int[] calllen = new int[call];
@@ -28,16 +28,45 @@ public class Main {
 			calllen[i] = Integer.parseInt(temp[i]);
 		}
 		
-		int minsik = 29; 
-		int yongsik = 59;
-		int[] mok = new int[call];
-		int[] namuge = new int[call];
-		int index = 0;
+		//나머지가 발생하면 금액을 +
+		//금액은 몫 *
+		
+		int yongsikLen = 30;
+		int minsikLen = 60; 
+		int yongsikCost = 10;
+		int minsikCost = 15;
+
+		int mok;
+		int namuge;
+		long costY = 0;
+		long costM = 0;
 		
 		for(int c : calllen) {
-			namuge[index] = c % minsik;
-			if(namuge[index]<c)
+			mok = c/yongsikLen;
+			namuge = c % yongsikLen;
+		
+			costY += yongsikCost * mok;
+			
+			if(namuge >= 0) {
+				costY += yongsikCost;
+			}
+			
+			mok = c/minsikLen;
+			namuge = c % minsikLen;
+		
+			costM += minsikCost * mok;
+			
+			if(namuge >= 0) {
+				costM += minsikCost;
+			}
 		}
 		
+		if(costY == costM) {
+			System.out.println("Y M " + costY);
+		}else if(costY > costM){
+			System.out.println("M " + costM);
+		}else if(costY < costM){
+			System.out.println("Y " + costY);
+		}
 	}
 }
