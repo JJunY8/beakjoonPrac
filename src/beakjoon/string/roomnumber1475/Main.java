@@ -7,27 +7,40 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Main {
 
+
+public class Main {
+	
+	public static void max(int[] a) {
+		int index = 0;
+		for(int k = 0; k<a.length; k++) {
+			index = ()? :
+		}
+	}
+	
 	public static void main(String[] args) throws IOException {
 		BufferedReader bf = 
 				new BufferedReader(new InputStreamReader(System.in));
-		
-		//Character[] str = bf.readLine().toCharArray();
-		//Set<Character> set = new HashSet<Character>(Arrays.asList(str));
-		/*for(char k : str) {
-			arr[index] = Character.getNumericValue(k);
-			index++;
-		}*/
-		
+
 		String str = bf.readLine();
 		char[] chr = str.toCharArray();
 		int[] count = {0,0,0,0,0,0,0,0,0,0};
+		int m = 0;
+		int mindex;
 		
 		for(char j : chr) {
-			int k = 
+			int k = Character.getNumericValue(j);
+			count[k]++;
 		}
-
+		
+		//what is max value's index?
+		
+		
+		
+		
+		
+		//System.out.println(max);
+		
 	}
 
 }
