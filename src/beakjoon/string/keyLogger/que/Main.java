@@ -14,11 +14,16 @@ public class Main {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out)); 
-		Queue<String> qstr = new LinkedList<String>(bf.readLine().split(null));
+		Queue<String> qstr = new LinkedList<String>();
 		
 		int commandSize = Integer.parseInt(bf.readLine());
+		
 		for(int i = 0; i<commandSize; i++) {
-			Queue<String> qstr = new LinkedList<String>(bf.readLine().split(bf.readLine()));
+			String[] str = bf.readLine().split("");
+			for(String e : str) {
+				qstr.add(e);
+			}
+			
 		}
 	}
 }
