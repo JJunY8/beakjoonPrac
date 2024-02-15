@@ -3,8 +3,6 @@ package beakjoon.calPhoneFee;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.stream.IntStream;
-import java.util.stream.LongStream;
 
 public class Main {
 	public static void main(String[] args) throws IOException  {
@@ -65,7 +63,7 @@ public class Main {
 			System.out.println("Y M " + costY);
 		}else if(costY > costM){
 			System.out.println("M " + costM);
-		}else if(costY < costM){
+		}else {
 			System.out.println("Y " + costY);
 		}
 	}
