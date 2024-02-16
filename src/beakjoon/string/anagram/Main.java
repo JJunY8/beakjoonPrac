@@ -28,6 +28,7 @@ public class Main {
 
         for(int k = 0; k<f_set.size(); k++){
             f_arr[k] = Collections.frequency();
+
         }
     }
 }
